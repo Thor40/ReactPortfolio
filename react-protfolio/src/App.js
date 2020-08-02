@@ -7,7 +7,7 @@ import './App.css';
 function App() {
 
   const [projects] = useState([
-    { name: "project 1", description: "Links to my project Repositories" },
+    { name: "project 1", description: "This Is a Project" },
     { name: "Project 2", description: "This Is a Project" },
     { name: "Project 3", description: "This Is a Project" },
     { name: "Project 4", description: "This Is a Project" },
@@ -22,7 +22,7 @@ function App() {
           currentProject={currentProject}
         ></Nav>
       <main>
-        <Projects></Projects>
+        <Projects currentProject={currentProject}></Projects>
         <About></About>
       </main>
     </div>

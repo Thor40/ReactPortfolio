@@ -29,25 +29,15 @@ function Nav(props) {
                         About me
                         </a>
                     </li>
+                    <li className='mx-1 navActive'>
+                        <a data-testid="mx-2"
+                        href="#projects">
+                            Projects
+                        </a>
+                    </li>
                     <li className="mx-2">
                         <span>Contact</span>
                     </li>
-                    {projects.map((project) => (
-                        <li
-                        className={`mx-1 ${
-                            currentProject.name === project.name && 'navActive'
-                            }`}
-                        key={project.name}
-                        >
-                        <span
-                            onClick={() => {
-                            setCurrentProject(project)
-                            }}
-                        >
-                            {capitalizeFirstLetter(project.name)}
-                        </span>
-                        </li>
-                    ))}
                 </ul>
             </nav>
         </header>
