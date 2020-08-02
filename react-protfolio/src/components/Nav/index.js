@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import { capitalizeFirstLetter } from "../../utils/helpers";
 
-function Nav() {
+function Nav(props) {
 
-    const projects = [
-        {
-          name: "projects",
-          description:
-            "Links to my project Repositories",
-        },
-        { name: "Project 1", description: "This Is a Project" },
-        { name: "Project 2", description: "This Is a Project" },
-        { name: "Project 2", description: "This Is a Project" },
-      ];
+    const {
+        projects = [],
+        setCurrentProject,
+        currentProject
+    } = props;
 
+    useEffect(() => {
+        document.title = capitalizeFirstLetter(currentProject.name);
+      }, [currentProject]);
 
     return (
         <header className="flex-row px-1">
@@ -31,13 +30,24 @@ function Nav() {
                         </a>
                     </li>
                     <li className="mx-2">
-                        <a href="#projects">
-                            Projects
-                        </a>
-                    </li>
-                    <li className="mx-2">
                         <span>Contact</span>
                     </li>
+                    {projects.map((project) => (
+                        <li
+                        className={`mx-1 ${
+                            currentProject.name === project.name && 'navActive'
+                            }`}
+                        key={project.name}
+                        >
+                        <span
+                            onClick={() => {
+                            setCurrentProject(project)
+                            }}
+                        >
+                            {capitalizeFirstLetter(project.name)}
+                        </span>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </header>
