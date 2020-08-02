@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import About from './components/About';
 import Nav from './components/Nav';
 import Projects from './components/Projects';
+import ContactForm from './components/Contact';
 import './App.css';
 
 function App() {
@@ -14,16 +15,25 @@ function App() {
   ]);
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
+  const [aboutSelected, setAboutSelected] = useState(false);
   return (
     <div>
         <Nav
           projects={projects}
           setCurrentProject={setCurrentProject}
           currentProject={currentProject}
+          aboutSelected={aboutSelected}
+          setAboutSelected={setAboutSelected}
         ></Nav>
       <main>
-        <Projects currentProject={currentProject}></Projects>
-        <About></About>
+        {!aboutSelected ? (
+          <>
+          <Projects currentProject={currentProject}></Projects>
+          <ContactForm></ContactForm>
+          </>
+        ) : (
+          <About></About>
+        )}
       </main>
     </div>
   );

@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
+// MAKE CONTACT A MODAL
 
 function Nav(props) {
 
     const {
         projects = [],
         setCurrentProject,
-        currentProject
+        currentProject,
+        setAboutSelected,
+        aboutSelected
     } = props;
 
     useEffect(() => {
@@ -22,20 +25,17 @@ function Nav(props) {
                 </a>
             </h2>
             <nav>
-                <ul className="flex-row">
-                    <li className="mx-2">
-                        <a data-testid="about"
-                        href="#about">
-                        About me
-                        </a>
+                <ul className='flex-row'>
+                    <li className="mx-2"
+                    onClick={() => setAboutSelected(true)}>
+                        <span>About Me</span>
                     </li>
-                    <li className='mx-1 navActive'>
-                        <a data-testid="mx-2"
-                        href="#projects">
-                            Projects
-                        </a>
+                    <li className='mx-2 navActive'
+                    onClick={() => setAboutSelected(false)}>
+                        <span>Projects</span>
                     </li>
-                    <li className="mx-2">
+                    <li className="mx-2"
+                    onClick={() => setAboutSelected(false)}>
                         <span>Contact</span>
                     </li>
                 </ul>
