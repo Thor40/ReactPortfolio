@@ -15,24 +15,24 @@ function App() {
   ]);
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
-  const [aboutSelected, setAboutSelected] = useState(false);
+  const [contactSelected, setContactSelected] = useState(false);
   return (
     <div>
         <Nav
           projects={projects}
           setCurrentProject={setCurrentProject}
           currentProject={currentProject}
-          aboutSelected={aboutSelected}
-          setAboutSelected={setAboutSelected}
+          contactSelected={contactSelected}
+          setContactSelected={setContactSelected}
         ></Nav>
       <main>
-        {!aboutSelected ? (
+        {!contactSelected ? (
           <>
           <Projects currentProject={currentProject}></Projects>
-          <ContactForm></ContactForm>
+          <About></About>
           </>
         ) : (
-          <About></About>
+          <ContactForm></ContactForm>
         )}
       </main>
     </div>

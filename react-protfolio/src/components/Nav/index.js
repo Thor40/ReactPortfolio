@@ -8,8 +8,8 @@ function Nav(props) {
         projects = [],
         setCurrentProject,
         currentProject,
-        setAboutSelected,
-        aboutSelected
+        setContactSelected,
+        contactSelected
     } = props;
 
     useEffect(() => {
@@ -27,15 +27,15 @@ function Nav(props) {
             <nav>
                 <ul className='flex-row'>
                     <li className="mx-2"
-                    onClick={() => setAboutSelected(true)}>
-                        <span>About Me</span>
+                    onClick={() => setContactSelected(false)}>
+                        <a href="#about">About Me</a>
                     </li>
-                    <li className='mx-2 navActive'
-                    onClick={() => setAboutSelected(false)}>
+                    <li className='mx-2'
+                    onClick={() => setContactSelected(false)}>
                         <span>Projects</span>
                     </li>
                     <li className="mx-2"
-                    onClick={() => setAboutSelected(false)}>
+                    onClick={() => setContactSelected(true)}>
                         <span>Contact</span>
                     </li>
                 </ul>
