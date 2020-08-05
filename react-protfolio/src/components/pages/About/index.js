@@ -15,7 +15,7 @@ function About() {
                     <img src={coverImage}
                     className="my-2 flex"
                     style={selfStyle}
-                    alt="A Picture of Me"
+                    alt="Nicholas Kosik"
                     />
                     <p className="align-items">
                         This is a story all about how my life got flipped upside down

@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 // MAKE CONTACT A MODAL
 
 function Nav(props) {
 
     const {
-        projects = [],
-        setCurrentProject,
-        currentProject,
-        handlePageChange,
         currentPage
     } = props;
 
