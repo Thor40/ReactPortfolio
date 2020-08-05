@@ -7,10 +7,7 @@ import ContactForm from './pages/Contact';
 function MainPage() {
 
   const [projects] = useState([
-    { name: "project 1", description: "This Is a Project" },
-    { name: "Project 2", description: "This Is a Project" },
-    { name: "Project 3", description: "This Is a Project" },
-    { name: "Project 4", description: "This Is a Project" },
+    { name: "My Projects", description: "Click a Project to get started!" }
   ]);
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
