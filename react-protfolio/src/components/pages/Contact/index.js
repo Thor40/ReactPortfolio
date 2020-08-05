@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
-import { validateEmail } from '../../utils/helpers';
+import { validateEmail } from '../../../utils/helpers';
 
 function ContactForm(props) {
     const [formState, setFormState ] = useState({ name: '', email: '', message: '' });
     const { name, email, message } = formState;
     const [errorMessage, setErrorMessage] = useState('');
-
-
-    const {
-        setContactSelected,
-        contactSelected
-    } = props;
 
     // handle change in form input fields
     function handleChange(e) {
@@ -52,8 +46,8 @@ function ContactForm(props) {
 
 
     return (
-        <section className="modalBackdrop">
-            <div className="modalContainer">
+        <section>
+            <div>
                 <h1>Contact me</h1>
                 <form id="contact-form" onSubmit={handleSubmit}>
                     <div>

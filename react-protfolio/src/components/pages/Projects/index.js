@@ -1,6 +1,6 @@
 import React from 'react';
 import PhotoList from '../PhotoList';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import { capitalizeFirstLetter } from '../../../utils/helpers';
 
 function Projects({ currentProject }) {
     const { name, description } = currentProject;
