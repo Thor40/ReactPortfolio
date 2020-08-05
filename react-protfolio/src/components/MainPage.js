@@ -35,6 +35,7 @@ function MainPage() {
           currentPage={currentPage} handlePageChange={handlePageChange}
         ></Nav>
         <div>{renderPage(currentPage)}</div>
+        <div className="container">Social Media Icons</div>
       </main>
   );
 }

@@ -18,12 +18,11 @@ function Nav(props) {
       const tabs = ['About', 'Projects', 'Contact'];
     return (
         <header className="flex-row px-1">
-            <h2>
-                <a data-testid="link"
-                href="/">
+            <h1>
+                <a href="/">
                     Nicholas Kosik
                 </a>
-            </h2>
+            </h1>
             <nav>
                 <ul className='flex-row'>
                     {tabs.map(tab => (
