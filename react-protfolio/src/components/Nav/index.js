@@ -8,14 +8,14 @@ function Nav(props) {
         projects = [],
         setCurrentProject,
         currentProject,
-        setContactSelected,
-        contactSelected
+        handlePageChange,
+        currentPage
     } = props;
 
     useEffect(() => {
-        document.title = capitalizeFirstLetter(currentProject.name);
-      }, [currentProject]);
+        document.title = capitalizeFirstLetter(currentPage)});
 
+      const tabs = ['About', 'Projects', 'Contact'];
     return (
         <header className="flex-row px-1">
             <h2>
@@ -26,18 +26,18 @@ function Nav(props) {
             </h2>
             <nav>
                 <ul className='flex-row'>
-                    <li className="mx-2"
-                    onClick={() => setContactSelected(false)}>
-                        <a href="#about">About Me</a>
+                    {tabs.map(tab => (
+                        <li className="mx-2" key={tab}>
+                            <a href={"#" + tab}
+                            onClick={() => props.handlePageChange(tab)}
+                            className={
+                                props.currentPage === tab ? 'nav-link active' : 'nav-link'
+                            }
+                            >
+                                {tab}
+                            </a>
                     </li>
-                    <li className='mx-2'
-                    onClick={() => setContactSelected(false)}>
-                        <span>Projects</span>
-                    </li>
-                    <li className="mx-2"
-                    onClick={() => setContactSelected(true)}>
-                        <span>Contact</span>
-                    </li>
+                    ))}
                 </ul>
             </nav>
         </header>

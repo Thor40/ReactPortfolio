@@ -2,14 +2,12 @@ import React from 'react';
 import PhotoList from '../PhotoList';
 import { capitalizeFirstLetter } from '../../../utils/helpers';
 
-function Projects({ currentProject }) {
-    const { name, description } = currentProject;
+function Projects() {
 
   return (
     <section>
-      <h1 data-testid="h1tag">{capitalizeFirstLetter(name)}</h1>
-      <p>{description}</p>
-      <PhotoList project={currentProject.name}/>
+      <h1>My Projects</h1>
+      <PhotoList/>
     </section>
   );
 }

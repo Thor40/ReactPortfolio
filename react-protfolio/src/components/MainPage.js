@@ -11,27 +11,31 @@ function MainPage() {
   ]);
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
-  const [contactSelected, setContactSelected] = useState(false);
+
+  const [currentPage, handlePageChange] = useState('About');
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'About':
+        return <About />;
+      case 'Projects':
+        return <Projects />;
+      case 'Contact':
+        return <ContactForm />;
+      default:
+        return <About />;
+    }
+  };
   return (
-    <div>
+    <main>
         <Nav
           projects={projects}
           setCurrentProject={setCurrentProject}
           currentProject={currentProject}
-          contactSelected={contactSelected}
-          setContactSelected={setContactSelected}
+          currentPage={currentPage} handlePageChange={handlePageChange}
         ></Nav>
-      <main>
-        {!contactSelected ? (
-          <>
-          <Projects currentProject={currentProject}></Projects>
-          <About></About>
-          </>
-        ) : (
-          <ContactForm></ContactForm>
-        )}
+        <div>{renderPage(currentPage)}</div>
       </main>
-    </div>
   );
 }
 
