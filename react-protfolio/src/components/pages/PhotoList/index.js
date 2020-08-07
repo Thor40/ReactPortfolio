@@ -6,9 +6,8 @@ function PhotoList({ projects }) {
         {
           id: 0,
           name: 'Run-Buddy',
-          project: 'Project 1',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
-          url: 'www.google.com'
+          description: 'HTML, basic JavaScript, and CSS mock website',
+          url: 'https://github.com/Thor40/run-buddy'
         },
         {
           id: 1,
@@ -51,6 +50,9 @@ function PhotoList({ projects }) {
                 onMouseLeave={() => setIsShown(false)}
               />
             ))}
+            {isShown && (
+                <div>hello</div>
+              )}
           </div>
         </div>
       );
