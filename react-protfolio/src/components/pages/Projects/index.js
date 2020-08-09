@@ -8,7 +8,7 @@ function Projects() {
       <div className="flex js">
       <h1>My Projects</h1>
       </div>
-      <PhotoList />
+        <PhotoList />
     </section>
   );
 }

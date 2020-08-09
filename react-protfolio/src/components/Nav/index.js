@@ -11,7 +11,7 @@ function Nav(props) {
     useEffect(() => {
         document.title = capitalizeFirstLetter(currentPage)});
 
-      const tabs = ['About', 'Projects', 'Contact'];
+      const tabs = ['About', 'Projects', 'Contact', 'Resume'];
     return (
         <header className="flex-row px-1">
             <h1>
