@@ -4,14 +4,12 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import ContactForm from './pages/Contact';
 import Resume from './pages/Resume';
-
+// add font awesome social media icons
+// restyle projects page
+// restyle contact form
+// restyle most css
+// update resume page
 function MainPage() {
-
-  const [projects] = useState([
-    { name: "My Projects", description: "Click a Project to get started!" }
-  ]);
-
-  const [currentProject, setCurrentProject] = useState(projects[0]);
 
   const [currentPage, handlePageChange] = useState('About');
 
@@ -32,13 +30,12 @@ function MainPage() {
   return (
     <main>
         <Nav
-          projects={projects}
-          setCurrentProject={setCurrentProject}
-          currentProject={currentProject}
           currentPage={currentPage} handlePageChange={handlePageChange}
         ></Nav>
         <div>{renderPage(currentPage)}</div>
-        <div className="container">Social Media Icons</div>
+        <footer className="container flex js">
+          <div>Social Media Icons</div>  
+        </footer>
       </main>
   );
 }
