@@ -4,11 +4,13 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import ContactForm from './pages/Contact';
 import Resume from './pages/Resume';
-// add font awesome social media icons
-// restyle projects page
-// restyle contact form
-// restyle most css
-// update resume page
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faInstagram
+} from "@fortawesome/free-brands-svg-icons";
+
 function MainPage() {
 
   const [currentPage, handlePageChange] = useState('About');
@@ -34,7 +36,23 @@ function MainPage() {
         ></Nav>
         <div>{renderPage(currentPage)}</div>
         <footer className="container flex js">
-          <div>Social Media Icons</div>  
+          <div className="mt-5 border-top p-2">
+              <a
+                href="https://github.com/Thor40"
+                className="m-2"
+              >
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
+              <a href="https://www.linkedin.com/in/nicholas-kosik-17405a1a3/" className="m-2">
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              </a>
+              <a
+                href="https://www.instagram.com/thorkosik/"
+                className="m-2"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </a>
+          </div>  
         </footer>
       </main>
   );

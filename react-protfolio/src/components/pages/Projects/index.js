@@ -5,8 +5,8 @@ function Projects() {
 
   return (
     <section>
-      <div className="flex js">
-      <h1>My Projects</h1>
+      <div className="flex justify-content-center mb-5">
+      <h2>My Projects</h2>
       </div>
         <PhotoList />
     </section>

@@ -47,27 +47,39 @@ function ContactForm(props) {
 
     return (
         <section>
-            <div>
-                <h1>Contact me</h1>
-                <form id="contact-form" onSubmit={handleSubmit}>
-                    <div>
+            <div className={"flex-row mt-5"}>
+                <div className={"align-self-center"}>
+                    <h2 className={""}>Contact me</h2>
+                </div>
+                
+                <form id="contact-form" className={"container"} onSubmit={handleSubmit}>
+                    <div className={"form-group"}>
                         <label htmlFor="name">Name:</label>
-                        <input type="text" defaultValue={name} onBlur={handleChange} name="name" />
+                        <input type="text" defaultValue={name} onBlur={handleChange} name="name" 
+                        className={"form-control"}
+                        />
                     </div>
-                    <div>
+                    <div className={"form-group"}>
                         <label htmlFor="email">Email address:</label>
-                        <input type="email" defaultValue={email} onBlur={handleChange} name="email" />
+                        <input type="email" defaultValue={email} onBlur={handleChange} name="email" 
+                        className={"form-control"}
+                        />
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                        You must input a vaild email address; e.g. email@email.com.
+                        </small>
                     </div>
-                    <div>
+                    <div className={"form-group"}> 
                         <label htmlFor="message">Message:</label>
-                        <textarea name="message" defaultValue={message} onBlur={handleChange} rows="5"  />
+                        <textarea name="message" defaultValue={message} onBlur={handleChange} rows="5"
+                        className={"form-control"}
+                        />
                     </div>
                     {errorMessage && (
                         <div>
                             <p className="error-text">{errorMessage}</p>
                         </div>
                         )}
-                    <button type="submit">Submit</button>
+                    <button type="submit" className={"btn btn-primary"}>Submit</button>
                 </form>
             </div>
         </section>

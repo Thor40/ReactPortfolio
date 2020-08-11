@@ -9,7 +9,7 @@ function About() {
     return (
         <section>
             <div className="flex js">
-            <h2 id="about">Let Me Introduce Myself!</h2>
+            <h2 id="about">Howdy</h2>
             </div>
                 <div className="flex space-between">
                     <img src={coverImage}
@@ -18,7 +18,7 @@ function About() {
                     alt="Nicholas Kosik"
                     />
                     <p className="align-items">
-                        This is a story all about how my life got flipped upside down
+                        Full-Stack Programmer looking for the next project. 
                     </p>
                 </div>
         </section>

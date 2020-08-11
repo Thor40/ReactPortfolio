@@ -13,20 +13,18 @@ function Nav(props) {
 
       const tabs = ['About', 'Projects', 'Contact', 'Resume'];
     return (
-        <header className="flex-row px-1">
-            <h1>
-                <a href="/">
-                    Nicholas Kosik
-                </a>
-            </h1>
+        <header>
             <nav>
-                <ul className='flex-row'>
+                <ul className='nav nav-fill'>
+                    <h1>
+                            Nicholas Kosik
+                    </h1>
                     {tabs.map(tab => (
-                        <li className="mx-2" key={tab}>
+                        <li className="nav-item" key={tab}>
                             <a href={"#" + tab}
                             onClick={() => props.handlePageChange(tab)}
                             className={
-                                props.currentPage === tab ? 'nav-link active' : 'nav-link'
+                                props.currentPage === tab ? 'nav-link' : 'nav-link active'
                             }
                             >
                                 {tab}

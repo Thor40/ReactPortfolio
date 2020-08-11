@@ -5,12 +5,11 @@ main {
   padding: 50px 30px;
 }
 :root {
-  --primary: #8c54ff;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
-  --light: #fafafa;
-  --dark: #000000;
-  --darker: #111111;
+  --primary: #A9CBB7;
+  --secondary: #4D7EA8;
+  --tertiary: #AC8887;
+  --white: #EFECCA;
+  --black: #272932;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -34,10 +33,14 @@ body {
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: .1em;
-  background: var(--dark);
-  color: var(--light);
+  background: var(--black);
+  color: var(--white);
   font-family: 'Lucida Sans Unicode', sans-serif;
 
+}
+
+.card {
+  color: var(--black)
 }
 
 h1,
@@ -53,52 +56,18 @@ h6 {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--secondary);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
-h3 {
-  font-size: 1.75rem;
-}
 
-h4 {
-  font-size: 1.5rem;
-}
 
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-p {
-  font-size: 1.1rem;
-}
-
-a {
-  color: var(--tertiary);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-header {
-  background: var(--dark);
-}
-
-header a {
-  color: var(--light);
-}
-
-button {
+.btn {
   font-size: 1rem;
   text-decoration: none;
   padding: 0.25rem 1rem;
@@ -143,25 +112,6 @@ input {
 input:focus {
   border: 1px solid var(--secondary);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
-}
-
-li {
-  list-style: none;
-}
-
-nav a:hover {
-  text-decoration: none;
-}
-
-nav  li {
-  cursor: pointer;
-}
-
-textarea {
-	width: 600px;
-	height: 120px;
-	border: 3px solid #cccccc;
-	padding: 5px;
 }
 
 .container {
@@ -258,32 +208,6 @@ textarea {
   cursor: pointer;
 }
 
-.modalBackdrop {
-	background: rgba(0, 0, 0, .65);
-	bottom: 0;
-	left: 0;
-	overflow: auto;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 1;
-}
-
-.modalContainer {
-	background: var(--darker);
-	border-radius: 5px;
-	max-width: 100%;
-	margin: 50px auto;
-	padding: 15px;
-	width: 960px;
-}
-
-.modalTitle {
-	font-size: 18px;
-	font-weight: 600;
-	margin-bottom: 25px;
-}
-
 button {
 	background: var(--primary);
 	border: 0;
@@ -297,15 +221,14 @@ button {
 }
 
 a {
-	border-radius: 5px;
-	color: var(--primary);
-	font-weight: 600;
-	padding: 2px 4px;
-	margin-left: -2px;
-	margin-right: -2px;
-	
+	color: var(--secondary);
 }
 
-.navActive {
-  color: var(--secondary);
+.active {
+  color: var(--primary);
+}
+
+.list-group-item {
+  background-color: var(--black);
+  border-color: var(--secondary);
 }
