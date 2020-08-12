@@ -42,6 +42,7 @@ Alternatively, you can find the app deployed on [GitHub Pages](https://guarded-g
 ## Features
 --------------------
 ### Features include:
-* ADD EXPENSE OR DEPOSIT INPUTS
-* INPUTS PERSIST WHEN OFFLINE AND ADD TO DB WHEN RECONNECTED TO INTERNET
-* ABILITY TO INSTALL APP ON DESKTOP/HOMESCREEN AS APP
+* ABOUT
+* PROJECTS
+* CONTACT ME
+* RESUME
