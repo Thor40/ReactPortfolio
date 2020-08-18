@@ -37,7 +37,7 @@ $ npm start
 ```
 This will bring up a page on the browser from localhost 3001
 --------------------
-Alternatively, you can find the app deployed on [GitHub Pages](https://guarded-gorge-18618.herokuapp.com/)
+Alternatively, you can find the app deployed on [GitHub Pages](https://thor40.github.io/ReactPortfolio/)
 
 ## Features
 --------------------
