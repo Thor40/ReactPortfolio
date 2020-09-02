@@ -5,6 +5,7 @@ function ContactForm(props) {
     const [formState, setFormState ] = useState({ name: '', email: '', message: '' });
     const { name, email, message } = formState;
     const [errorMessage, setErrorMessage] = useState('');
+    const [state, setState] = useState({ status: "" });
 
     // handle change in form input fields
     function handleChange(e) {
@@ -40,10 +41,23 @@ function ContactForm(props) {
     // when submit clicked, prevent default
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formState);
-    };
 
-
+        const form = e.target;
+        const data = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+            form.reset();
+            setState({ status: "SUCCESS" });
+          } else {
+            setState({ status: "ERROR" });
+          }
+        };
+        xhr.send(data);
+      }
 
     return (
         <section>
@@ -52,7 +66,9 @@ function ContactForm(props) {
                     <h2 className={""}>Contact me</h2>
                 </div>
                 
-                <form id="contact-form" className={"container"} onSubmit={handleSubmit}>
+                <form id="contact-form" className={"container"} onSubmit={handleSubmit}
+                        action="https://formspree.io/mzbjloyp"
+                        method="POST">
                     <div className={"form-group"}>
                         <label htmlFor="name">Name:</label>
                         <input type="text" defaultValue={name} onBlur={handleChange} name="name" 
@@ -64,7 +80,7 @@ function ContactForm(props) {
                         <input type="email" defaultValue={email} onBlur={handleChange} name="email" 
                         className={"form-control"}
                         />
-                        <small id="passwordHelpBlock" class="form-text text-muted">
+                        <small id="passwordHelpBlock" className="form-text text-muted">
                         You must input a vaild email address; e.g. email@email.com.
                         </small>
                     </div>
