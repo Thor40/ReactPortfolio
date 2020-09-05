@@ -13,7 +13,7 @@ function ContactForm(props) {
         if (e.target.name === 'email') {
             // isValid runs email validation
             const isValid = validateEmail(e.target.value);
-            console.log(isValid);
+            // console.log(isValid);
             // isValid conditional statement
                 if (!isValid) {
                     setErrorMessage('Your email is invalid.');

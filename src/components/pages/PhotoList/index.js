@@ -26,9 +26,9 @@ function PhotoList() {
         },
         {
           id: 3,
-          name: 'GoodFam',
-          description: 'This project was created as an exercise practicing creating an API for a social network using MongoDB, Mongoose ODM, and several other quality of life packages.',
-          url: 'https://github.com/Thor40/goodFam',
+          name: 'Help Exchange',
+          description: 'Using MERN stack with MongoDB and Mongoose, and GraphQL, this social media volunteer app allows users to request for help or for volunteering to help.',
+          url: 'https://rocky-retreat-38962.herokuapp.com/',
           img: 'code.jpg'
         }
     ];
