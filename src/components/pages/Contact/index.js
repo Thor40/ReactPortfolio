@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { validateEmail } from '../../../utils/helpers';
 
-function ContactForm(props) {
+function ContactForm() {
     const [formState, setFormState ] = useState({ name: '', email: '', message: '' });
     const { name, email, message } = formState;
     const [errorMessage, setErrorMessage] = useState('');
-    const [state, setState] = useState({ status: "" });
+    const [setState] = useState({ status: "" });
 
     // handle change in form input fields
     function handleChange(e) {
